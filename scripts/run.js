@@ -2,7 +2,7 @@ const main = async () => {
   const gameManagerContractFactory = await hre.ethers.getContractFactory(
     "GameManager"
   );
-  const gameContract = await hre.ethers.deploy();
+  const gameContract = await gameManagerContractFactory.deploy();
   await gameContract.deployed();
 
   console.log("Game deployed at:", gameContract.address);
